@@ -213,11 +213,11 @@ const weight = prompt("Please enter your weight in kilograms (e.g., 70):");
 }
 
 function sendListWithDelay(list) {
-  addMessage(); // Send introductory message
+  addMessage(); 
   list.forEach((item, index) => {
       setTimeout(() => {
-          addMessage(item, "bot-message"); // Send each item after a delay
-      }, index * 1000); // Adjust the delay (1000 ms = 1 second)
+          addMessage(item, "bot-message"); 
+      }, index * 1000); 
   });
 }
 

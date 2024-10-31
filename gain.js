@@ -38,12 +38,48 @@ var fats = [
 ];
 
 var workouts = [
-    "Bench press",
-    " pull-ups",
-     "squats", 
-     "leg press",
-      "push-ups",
-       " cardio"
+    `Sure here is your workout plan`,
+
+    `Day 1: (Upper Body (Chest and Triceps))
+
+    Bench Press: 4 sets of 6-8 reps,
+    Dumbbell Flyes: 3 sets of 10-12 reps,
+    Push-Ups: 3 sets to failure,
+    Tricep Dips: 3 sets of 8-10 reps,
+    Overhead Tricep Extension: 3 sets of 10-12 reps`,
+
+     `Day 2: (Lower Body (Legs and Core))
+    Squats: 4 sets of 6-8 reps,
+    Lunges: 3 sets of 10-12 reps per leg,
+    Deadlift: 4 sets of 6-8 reps,
+    Leg Press: 3 sets of 10-12 reps,
+    Plank: 3 sets of 30-60 seconds`,
+
+    `Day 3: Rest or Light Cardio (e.g., 20-30 minutes walking or cycling)`, 
+
+     `Day 4: (Back and Biceps)
+    Pull-Ups or Lat Pulldown: 4 sets of 6-8 reps,
+    Dumbbell Row: 3 sets of 10 reps per arm,
+    Face Pulls: 3 sets of 12 reps,
+    Bicep Curls: 3 sets of 10-12 reps,
+    Hammer Curls: 3 sets of 10 reps`,
+
+      `Day 5: (Shoulders and Core)
+    Overhead Press: 4 sets of 8 reps,
+    Lateral Raises: 3 sets of 12 reps,
+    Rear Delt Flyes: 3 sets of 12 reps,
+    Russian Twists: 3 sets of 20 twists,
+    Leg Raises: 3 sets of 15 reps`,
+
+       `Day 6: (Lower Body (Glutes and Hamstrings))
+    Deadlifts: 4 sets of 8 reps,
+    Leg Curls: 3 sets of 12 reps,
+    Bulgarian Split Squats: 3 sets of 10 reps per leg,
+    Calf Raises: 3 sets of 15 reps,
+    Bicycle Crunches: 3 sets of 20 reps,
+    `,
+
+    `Day 7: Rest`
 ];
 
 function sendMessage() {
@@ -57,7 +93,7 @@ function sendMessage() {
     setTimeout(() => addMessage(botResponse, "bot-message"), 500);
 }
 
-// Add Message to Chat
+
 function addMessage(message, className) {
     const chatBox = document.getElementById("chat-box");
     const messageDiv = document.createElement("div");
@@ -67,7 +103,7 @@ function addMessage(message, className) {
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-// Get Bot Response Function
+
 function getBotResponse(input) {
     if (input.includes("weight gaining plan")) {
         return askForHeightAndWeight();
@@ -89,7 +125,7 @@ function getBotResponse(input) {
                 addMessage(line, "bot-message");
             }, index * 1000);
         });
-        return; // Exit after starting the message queue
+        return; 
     } else if (input.includes("bye")) {
         return "Goodbye! Have a great day!";
     } else if (input.includes("protein foods") || input.includes("protein food") || input.includes("protein")) {
@@ -105,7 +141,7 @@ function getBotResponse(input) {
     }
 }
 
-// Ask for Height and Weight Function
+
 function askForHeightAndWeight() {
     const weight = prompt("Please enter your weight in kilograms (e.g., 70):");
     
@@ -145,16 +181,16 @@ function askForHeightAndWeight() {
                     it you need to intake ${calories} g of calories per day (protein- ${pro} g , carbs- ${car}g , Fat- ${fat} g).`;
     }
 }
-// }
+
 
 
 
 
 function sendListWithDelay(list) {
-    addMessage(); // Send introductory message
+    addMessage(); 
     list.forEach((item, index) => {
         setTimeout(() => {
-            addMessage(item, "bot-message"); // Send each item after a delay
-        }, index * 1000); // Adjust the delay (1000 ms = 1 second)
+            addMessage(item, "bot-message");
+        }, index * 1000); 
     });
 }

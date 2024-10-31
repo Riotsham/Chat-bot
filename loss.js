@@ -37,13 +37,45 @@ var fats = [
 ];
 
 var workouts = [
-    "Bent-over",
-    "Shoulder-press",
-    "Squats",
-    "Deadlift",
-    "pushups",
-    "planks",
-    "Cardio" 
+  `Sure here is your workout plan`,
+
+  `Day 1: (Full Body Strength)
+
+  Squats: 3 sets of 12 reps,
+  Push-Ups: 3 sets of 15 reps,
+  Bent-Over Rows: 3 sets of 12 reps,
+  Lunges: 3 sets of 12 reps per leg,
+  Plank: 3 sets of 30-45 seconds`,
+
+   `Day 2 & 6: (High-Intensity Interval Training (HIIT))
+
+  Jump Rope or High Knees: 30 seconds on, 15 seconds rest, for 1015 minutes;
+  Circuit of Burpees, Jump Squats, and Mountain Climbers: 30 seconds each, for 3 rounds`,
+
+  `Day 3: (Lower Body and Core)
+
+  Deadlift: 3 sets of 10 reps,
+  Glute Bridge: 3 sets of 15 reps,
+  Leg Press: 3 sets of 12 reps,
+  Russian Twists: 3 sets of 20 reps,
+  Bicycle Crunches: 3 sets of 20 reps`, 
+
+   `Day 4: (Steady-State Cardio)
+
+  30-45 minutes of brisk walking, jogging, or cycling at a moderate pace`,
+
+    `Day 5: (Upper Body and Core)
+
+  Shoulder Press: 3 sets of 12 reps,
+  Lat Pulldown: 3 sets of 12 reps,
+  Bicep Curls: 3 sets of 12 reps,
+  Tricep Dips: 3 sets of 12 reps,
+  Mountain Climbers: 3 sets of 30 seconds`,
+
+     `Day 7: (Active Recovery or Light Cardio)
+
+Light activity such as yoga, stretching, or a casual walk
+  `
 ];
 
 function sendMessage() {

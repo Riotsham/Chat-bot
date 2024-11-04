@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Nutrition Barcode Scanner</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+    <link rel="stylesheet" href="barcode.css">
+</head>
+<body>
+    <div class="con">
+    <div class="bar">
+        <h1>Scan or Enter a Barcode Number</h1>
+        <div id="barcode-scanner"></div>
+        <p id="barcode-result">Barcode: <span id="barcode-number"></span></p>
+        
+
+        <div class="input">
+            <label for="manual-barcode">Enter Barcode Number:</label>
+            <input type="text" id="manual-barcode" placeholder="Enter barcode number" />
+            <button class="get"  onclick="fetchNutritionData(document.getElementById('manual-barcode').value )">Get</button>
+        </div>
+
+        <div id="nutrition-info">
+            <h2>Nutrition Information</h2>
+            <p id="product-name"></p>
+            <p>Calories: <span id="calories"></span></p>
+            <p>Protein: <span id="protein"></span></p>
+            <p>Carbohydrates: <span id="carbs"></span></p>
+            <p>Fats: <span id="fats"></span></p>
+        </div>
+        
+    </div>
+    <button class="cam" onclick="startScanner()">Start Scanner</button>
+    <button class="cam-2" onclick="stopscanner()">Stop Scanner</button>
+    </div>
+
+    <script>
+        
+        function startScanner() {
+            Quagga.init({
+                inputStream: {
+                    name: "Live",
+                    type: "LiveStream",
+                    target: document.querySelector('#barcode-scanner'), 
+                    constraints: {
+                        width: 300,
+                        height: 200,
+                        facingMode: "environment" 
+                    }
+                },
+                decoder: {
+                    readers: ["ean_reader", "upc_reader"] 
+                }
+            }, function(err) {
+                if (err) {
+                    console.error("Initialization failed:", err);
+                    return;
+                }
+                console.log("Initialization succeeded");
+                Quagga.start();
+            });
+
+           
+            Quagga.onDetected(function(result) {
+                const barcode = result.codeResult.code;
+                console.log("Barcode detected:", barcode);
+                document.getElementById("barcode-number").innerText = barcode;
+                
+               
+                fetchNutritionData(barcode);
+
+                
+                Quagga.stop();
+            });
+        }
+
+        function stopscanner(){
+            Quagga.stop();
+        }
+
+       
+        function fetchNutritionData(barcode) {
+            if (!barcode) {
+                alert("Please enter a valid barcode number.");
+                return;
+            }
+
+            const apiUrl = `https://world.openfoodfacts.org/api/v0/product/${barcode}.json`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 1) { 
+                        const product = data.product;
+                        const nutrition = product.nutriments;
+
+                        
+                        document.getElementById("product-name").innerText = `Product Name: ${product.product_name}`;
+                        document.getElementById("calories").innerText = nutrition["energy-kcal"] || "N/A";
+                        document.getElementById("protein").innerText = nutrition.proteins || "N/A";
+                        document.getElementById("carbs").innerText = nutrition.carbohydrates || "N/A";
+                        document.getElementById("fats").innerText = nutrition.fat || "N/A";
+                    } else {
+                        alert("Product not found.");
+                        clearNutritionInfo();
+                        
+                    }
+                })
+                .catch(error => {
+                    console.error("Error fetching data:", error);
+                    alert("Failed to fetch nutrition data.");
+                    
+                });
+        }
+
+        
+        function clearNutritionInfo() {
+            document.getElementById("product-name").innerText = "";
+            document.getElementById("calories").innerText = "N/A";
+            document.getElementById("protein").innerText = "N/A";
+            document.getElementById("carbs").innerText = "N/A";
+            document.getElementById("fats").innerText = "N/A";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, sans-serif;
+    background : url(gauze-01.png);
+    background-position: center;
+    background-size: 210vh 200vh;
+    background-repeat: no-repeat;
+}
+
+    .con{
+        
+     display:flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 900px;
+    background-color:transparent;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: opacity 0.5s ease;
+    color: aliceblue;
+
+    }
+        #barcode-scanner {
+            width: 100%;
+            max-width: 640px;
+            height: auto;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #nutrition-info {
+            margin-top: 20px;
+        }
+        .bar{
+            display: flex;
+           flex-direction: column;
+           height: 320%;
+           width: 80%;
+           overflow: scroll;
+          backdrop-filter: blur(16px) saturate(180%);
+          -webkit-backdrop-filter: blur(16px) saturate(180%);
+          background-color: rgba(17, 25, 40, 0.75);
+          border-radius: 12px;
+          border: 1px solid rgba(255, 255, 255, 0.125);
+        
+            height: 400px;
+            padding: 10px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .bar::-webkit-scrollbar {
+            display: none;
+          }
+
+        .cam{
+            position: absolute;
+            bottom: 10%;
+            height: 40px;
+            background-color: #2c5a86;
+            color: white;
+            align-self: flex-end;
+            border: none;
+            border-radius: 10px;
+            right: 33%;
+            cursor: pointer;
+        }
+
+        .cam-2{
+            position: absolute;
+            bottom: 10%;
+            height: 40px;
+            background-color: #2c5a86;
+            color: white;
+            align-self: flex-end;
+            border: none;
+            border-radius: 10px;
+            right: 25%;
+            cursor: pointer;
+        }
+
+        #manual-barcode{
+            height: 30px;
+            padding-left: 10px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        .get{
+            height: 30px;
+            width: 50px;
+            background-color: #2c5a86;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            
+        }

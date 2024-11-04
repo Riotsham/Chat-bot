@@ -9,6 +9,8 @@
 </head>
 <body>
     <img src="logo.png" alt="">
+    <button class="bar-code"><a href="barcode.html"><i class='bx bx-scan'></i></a></button>
+    <button class="info"><a href="info.html"><i class='bx bxs-calculator'></i></a></button>
     <div class="chat-container">
         <div id="chat-box" class="chat-box">
             <div class="bot-message">Hey there i'm gixx your fitness assitant. command "help" to list my functionalities</div>
@@ -17,7 +19,7 @@
 
         <input type="text" id="user-input" placeholder="Type your message here...">
         <button></button>
-            <button onclick="sendMessage()"><i class='bx bxs-send'></i></button>
+            <button onclick="sendMessage()"><i class='bx bxs-send' id="send"></i></button>
        
     </div>
     <script src="loss.js"></script>

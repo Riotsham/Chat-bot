@@ -136,10 +136,12 @@ function getBotResponse(input) {
         sendListWithDelay(fats, "Here are some protein sources: ");
     } else if (input.includes("workout plan")) {
         sendListWithDelay(workouts, "Here are some protein sources: ");
-    } else {
+    }
+        
+     else {
         return "Enter valid commands. Type 'help' to display commands.";
     }
-}
+
 
 
 function askForHeightAndWeight() {
@@ -193,4 +195,5 @@ function sendListWithDelay(list) {
             addMessage(item, "bot-message");
         }, index * 1000); 
     });
+}
 }

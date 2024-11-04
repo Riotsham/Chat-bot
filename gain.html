@@ -8,8 +8,11 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <button class="bar-code"><a href="barcode.html"><i class='bx bx-scan '></i></a></button>
+    <button class="info"><a href="info.html"><i class='bx bxs-calculator'></i></a></button>
     <div class="chat-container">
         <img src="logo.png" >
+        
         <div id="chat-box" class="chat-box" >
             <div class="bot-message">Hey there i'm gixx your fitness assitant. Type "help" to list my functionalities</div>
 
@@ -21,7 +24,7 @@
 
         <input type="text" id="user-input" placeholder="Type your message here...">
         <button></button>
-            <button onclick="sendMessage()"><i class='bx bxs-send'></i></button>
+            <button onclick="sendMessage()"><i class='bx bxs-send' id="send" ></i></button>
        
     </div>
     <script src="gain.js"></script>

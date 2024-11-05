@@ -145,8 +145,14 @@ function getBotResponse(input) {
 
 
 function askForHeightAndWeight() {
+
     const weight = prompt("Please enter your weight in kilograms (e.g., 70):");
+    const height = prompt("Please enter your Height in Meters (e.g.1.75):");
     
+    let bmi = weight / (height * height);
+       
+    
+
     var maincaltoo =((weight*2.2*14)+600);
     var protein = ((maincaltoo*0.25)/4);
     var carbs = ((maincaltoo*0.6)/4);
@@ -158,29 +164,39 @@ function askForHeightAndWeight() {
     var fat = parseInt(fats)
     
   
-    if(weight >40 && weight<=50){
+    if(bmi>14 && bmi<=15){
        
         var too = (weight*0.05).toFixed(1);
-        return ` According to your weight you need to increase 5% of your current weight
-                    Your weight is ${weight}kg you need to increase ${too}kg per month, to increase
-                    it you need to intake ${calories} g of calories per day (protein- ${pro} g , carbs- ${car}g , Fat- ${fat} g).`;
+        return `  Based on your current weight. it's recommended  to gain  5% of your current weight,
+                  Your current weight is ${weight}kg it's recommended to gain ${too}kg per month, To reach this
+                  goal,try to keep your daily calorie intake around ${calories}g with protein- ${pro} , carbs-${car} , Fat-${fat}`;
+                    
                 
                 }
     
-    else if(weight>50 && weight<=60){
+    else if(bmi>16 && bmi<=17){
         var too = (weight*0.025).toFixed(1)
         
-        return ` According to your weight you need to increase 2.5% of your current weight
-                    Your weight is ${weight}kg you need to increase ${too}kg per month, to increase
-                    it you need to intake ${calories} g of calories per day (protein- (protein- ${pro} g , carbs- ${car}g , Fat- ${fat} g).`;
+        return ` Based on your current weight. it's recommended  to gain  2.5% of your current weight,
+                  Your current weight is ${weight}kg it's recommended to gain ${too}kg per month, To reach this
+                  goal,try to keep your daily calorie intake around ${calories}g with protein- ${pro} , carbs-${car} , Fat-${fat}`;
     }
     
-    else if(weight>60 && weight<=70){
+    else if(bmi>17 && bmi<18.5){
         var too = (weight*0.0125).toFixed(1)
         
-        return ` according to your weight you need to increase 1.25% of your current weight
-                    Your weight is ${weight}kg you need to increase ${too}kg per month, to increase
-                    it you need to intake ${calories} g of calories per day (protein- ${pro} g , carbs- ${car}g , Fat- ${fat} g).`;
+        return `Based on your current weight. it's recommended  to gain  1.25% of your current weight,
+                  Your current weight is ${weight}kg it's recommended to gain ${too}kg per month, To reach this
+                  goal,try to keep your daily calorie intake around ${calories}g with protein- ${pro} , carbs-${car} , Fat-${fat}`;
+    }
+    else if(bmi>18.5 && bmi<24.9){
+        return `You are at normal weight`;
+    }
+    else if(bmi>30){
+        return`You are over weight`;
+    }
+    else{
+        return`Enter a valid height and weight`;
     }
 }
 

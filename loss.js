@@ -161,11 +161,15 @@ return;
 
 function askForHeightAndWeight() {
 
-const weight = prompt("Please enter your weight in kilograms (e.g., 70):");
+  const weight = prompt("Please enter your weight in kilograms (e.g., 70):");
+  const height = prompt("Please enter your Height in Meters (e.g.1.75):");
+  
+  let bmi = weight / (height * height);
+  console.log(bmi)
 
 
 
-  if(weight >80 && weight<=90){
+  if(bmi>25 &&bmi<=29.9){
       var too = (weight*0.01).toFixed(1)
       var maincaltoo =((weight*2.2*12)+600);
       var protein = ((maincaltoo*0.25)/4);
@@ -177,13 +181,13 @@ const weight = prompt("Please enter your weight in kilograms (e.g., 70):");
       var car = parseInt(carbs)
       var fat = parseInt(fats)
 
-      return ` According to your weight you need to reduce 1% of your current weight,
-                  Your weight is ${weight}kg you need to reduce ${too}kg per month, to reduce
-                  it you need to intake ${calories}g of calories per day (protein- ${pro} , carbs-${car} , Fat-${fat})`;
+      return ` Based on your current weight. it's recommended  to lose  1% of your current weight,
+                  Your current weight is ${weight}kg it's recommended to lose ${too}kg per month, To reach this
+                  goal,try to keep your daily calorie intake around ${calories}g with protein- ${pro} , carbs-${car} , Fat-${fat}`;
               
               }
 
-  else if(weight>90){
+  else if(bmi>30){
       var too = (weight*0.01).toFixed(1)
       var maincaltoo =((weight*2.2*10)+600);
       var protein = ((maincaltoo*0.25)/4);
@@ -195,10 +199,17 @@ const weight = prompt("Please enter your weight in kilograms (e.g., 70):");
       var car = parseInt(carbs)
       var fat = parseInt(fats)
 
-      return ` According to your weight you need to reduce 1% of your current weight
-                  Your weight is ${weight}kg you need to reduce ${too}kg per month, to reduce
-                  it you need to intake ${calories}g of calories per day (protein- ${pro} , carbs-${car} , Fat-${fat})`;
+      return ` Based on your current weight. it's recommended  to lose  1% of your current weight,
+                  Your current weight is ${weight}kg it's recommended to lose ${too}kg per month, To reach this
+                  goal,try to keep your daily calorie intake around ${calories}g with protein- ${pro} , carbs-${car} , Fat-${fat}`;
+
      
+  }
+  else if(bmi>=18.5 && bmi<=24.9){
+      return`You are at normal weight`;
+  }
+  else if(bmi<18){
+     return`You are under weight`
   }
 
   

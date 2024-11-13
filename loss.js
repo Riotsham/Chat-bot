@@ -153,8 +153,51 @@ return;
     sendListWithDelay(fats, "Here are some protein sources: ");
 } else if (input.includes("workout plan")) {
     sendListWithDelay(workouts, "Here are some protein sources: ");
-} else {
-    return "Enter valid commands. Type 'help' to display commands.";
+} else if(input.includes("today's plan")||input.includes("plan today")){
+  const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const today = new Date();
+  const dayName = daysOfWeek[today.getDay()];
+  console.log("Today is " + dayName);
+
+  if( dayName== "Sunday"){
+      return`Squats: 3 sets of 12 reps,
+      Push-Ups: 3 sets of 15 reps,
+      Bent-Over Rows: 3 sets of 12 reps,
+      Lunges: 3 sets of 12 reps per leg,
+      Plank: 3 sets of 30-45 seconds`
+  }
+  else if(dayName == "Monday"){
+      return ` Jump Rope or High Knees: 30 seconds on, 15 seconds rest, for 1015 minutes;
+  Circuit of Burpees, Jump Squats, and Mountain Climbers: 30 seconds each, for 3 rounds`
+  }
+  else if(dayName == "Tuesday"){
+          return`Deadlift: 3 sets of 10 reps,
+  Glute Bridge: 3 sets of 15 reps,
+  Leg Press: 3 sets of 12 reps,
+  Russian Twists: 3 sets of 20 reps,
+  Bicycle Crunches: 3 sets of 20 reps`
+  }
+  else if(dayName == "Wednesday"){
+      return`30-45 minutes of brisk walking, jogging, or cycling at a moderate pace`
+  }
+  else if(dayName == "Thursday"){
+      return ` Shoulder Press: 3 sets of 12 reps,
+  Lat Pulldown: 3 sets of 12 reps,
+  Bicep Curls: 3 sets of 12 reps,
+  Tricep Dips: 3 sets of 12 reps,
+  Mountain Climbers: 3 sets of 30 seconds`
+  }
+  else if(dayName == "Friday"){
+      return`Jump Rope or High Knees: 30 seconds on, 15 seconds rest, for 1015 minutes;
+  Circuit of Burpees, Jump Squats, and Mountain Climbers: 30 seconds each, for 3 rounds`
+  }
+  else if(dayName == "Saturday"){
+      return`Light activity such as yoga, stretching, or a casual walk`
+  }
+  
+}
+ else {
+    return "I'm sorry, I didn't understand that. Please try a different command or type 'help' for a list of commands";
 }
 }
 

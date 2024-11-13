@@ -117,7 +117,8 @@ function getBotResponse(input) {
             "2. \"List high protein foods.\" - Receive a list of protein-rich foods.",
             "3. \"List high carbohydrate foods.\" - Get a list of carbohydrate-rich foods.",
             "4. \"List high fat foods.\" - Access a list of fat-rich foods.",
-            "5. \"Suggest a workout plan.\" - Receive a customized workout plan."
+            "5. \"Suggest a workout plan.\" - Receive a customized workout plan.",
+            "6. \"What today's plan.\" - Receive a workout plan for current."
         ];
 
         lines.forEach((line, index) => {
@@ -137,14 +138,64 @@ function getBotResponse(input) {
     } else if (input.includes("workout plan")) {
         sendListWithDelay(workouts, "Here are some protein sources: ");
     }
+    else if(input.includes("today's plan")||input.includes("plan today")){
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const today = new Date();
+        const dayName = daysOfWeek[today.getDay()];
+        console.log("Today is " + dayName);
+
+        if( dayName== "Sunday"){
+            return`Bench Press: 4 sets of 6-8 reps,
+            Dumbbell Flyes: 3 sets of 10-12 reps,
+            Push-Ups: 3 sets to failure,
+            Tricep Dips: 3 sets of 8-10 reps,
+            Overhead Tricep Extension: 3 sets of 10-12 reps`
+        }
+        else if(dayName == "Monday"){
+            return ` Squats: 4 sets of 6-8 reps,
+            Lunges: 3 sets of 10-12 reps per leg,
+            Deadlift: 4 sets of 6-8 reps,
+            Leg Press: 3 sets of 10-12 reps,
+            Plank: 3 sets of 30-60 seconds`
+        }
+        else if(dayName == "Tuesday"){
+                return`Rest or Light Cardio (e.g., 20-30 minutes walking or cycling)`
+        }
+        else if(dayName == "Wednesday"){
+            return` Pull-Ups or Lat Pulldown: 4 sets of 6-8 reps,
+            Dumbbell Row: 3 sets of 10 reps per arm,
+            Face Pulls: 3 sets of 12 reps,
+            Bicep Curls: 3 sets of 10-12 reps,
+            Hammer Curls: 3 sets of 10 reps`
+        }
+        else if(dayName == "Thursday"){
+            return ` Overhead Press: 4 sets of 8 reps,
+            Lateral Raises: 3 sets of 12 reps,
+            Rear Delt Flyes: 3 sets of 12 reps,
+            Russian Twists: 3 sets of 20 twists,
+            Leg Raises: 3 sets of 15 reps`
+        }
+        else if(dayName == "Friday"){
+            return`Deadlifts: 4 sets of 8 reps,
+            Leg Curls: 3 sets of 12 reps,
+         Bulgarian Split Squats: 3 sets of 10 reps per leg,
+         Calf Raises: 3 sets of 15 reps,
+         Bicycle Crunches: 3 sets of 20 reps`
+        }
+        else if(dayName == "Saturday"){
+            return`Rest`
+        }
+        
+    }
         
      else {
-        return "Enter valid commands. Type 'help' to display commands.";
+        return "I'm sorry, I didn't understand that. Please try a different command or type 'help' for a list of commands";
     }
 
 
 
 function askForHeightAndWeight() {
+        
 
     const weight = prompt("Please enter your weight in kilograms (e.g., 70):");
     const height = prompt("Please enter your Height in Meters (e.g.1.75):");
@@ -213,3 +264,7 @@ function sendListWithDelay(list) {
     });
 }
 }
+
+
+  
+  

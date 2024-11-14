@@ -112,7 +112,9 @@
   border: 1px solid rgba(255, 255, 255, 0.125);
   
  }
-
+button{
+  transition: 0.5s;
+}
  button:hover{
   
     box-shadow: 0 0 20px rgba(106, 90, 205, 1), 
@@ -125,3 +127,5 @@
   box-shadow: none;
   
 }
+
+

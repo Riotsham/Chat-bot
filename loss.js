@@ -271,8 +271,38 @@ function sendListWithDelay(list) {
   list.forEach((item, index) => {
       setTimeout(() => {
           addMessage(item, "bot-message"); 
-      }, index * 1000); 
+      }, index * 1500); 
   });
 }
 
 
+function sendMessage() {
+  const userInput = document.getElementById("user-input").value;
+  if (userInput.trim() === "") return;
+
+  addMessage(userInput, "user-message");
+  document.getElementById("user-input").value = "";
+
+  showTypingIndicator();
+
+  let botResponse = getBotResponse(userInput.toLowerCase());
+  setTimeout(() => {
+      hideTypingIndicator();
+      addMessage(botResponse, "bot-message");
+  }, 1000); // Delay to show typing animation
+}
+
+function showTypingIndicator() {
+  const chatBox = document.getElementById("chat-box");
+  const typingDiv = document.createElement("div");
+  typingDiv.className = "typing-indicator";
+  typingDiv.id = "typing-indicator";
+  typingDiv.innerHTML = '<div class="dot"></div><div class="dot"></div><div class="dot"></div>';
+  chatBox.appendChild(typingDiv);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function hideTypingIndicator() {
+  const typingDiv = document.getElementById("typing-indicator");
+  if (typingDiv) typingDiv.remove();
+}

@@ -38,6 +38,7 @@ var fats = [
 ];
 
 var workouts = [
+    
     `Sure here is your workout plan`,
 
     `Day 1: (Upper Body (Chest and Triceps))
@@ -134,11 +135,10 @@ function getBotResponse(input) {
     } else if (input.includes("carbo foods") || input.includes("carbohydrates foods") || input.includes("carbo")) {
         sendListWithDelay(carbo, "Here are some protein sources: ");
     } else if (input.includes("fat foods") || input.includes("fat food") || input.includes("fat")) {
-        sendListWithDelay(fats, "Here are some protein sources: ");
+       sendListWithDelay(fats,"Here are some protein sources: ");
     } else if (input.includes("workout plan")) {
         sendListWithDelay(workouts, "Here are some protein sources: ");
-    }
-    else if(input.includes("today's plan")||input.includes("plan today")){
+    }else if(input.includes("today's plan")||input.includes("plan today")){
         const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         const today = new Date();
         const dayName = daysOfWeek[today.getDay()];
@@ -260,11 +260,40 @@ function sendListWithDelay(list) {
     list.forEach((item, index) => {
         setTimeout(() => {
             addMessage(item, "bot-message");
-        }, index * 1000); 
+        }, index * 1500); 
     });
+    
 }
 }
 
 
-  
-  
+function sendMessage() {
+    const userInput = document.getElementById("user-input").value;
+    if (userInput.trim() === "") return;
+
+    addMessage(userInput, "user-message");
+    document.getElementById("user-input").value = "";
+
+    showTypingIndicator();
+
+    let botResponse = getBotResponse(userInput.toLowerCase());
+    setTimeout(() => {
+        hideTypingIndicator();
+        addMessage(botResponse, "bot-message");
+    }, 1000); 
+}
+
+function showTypingIndicator() {
+    const chatBox = document.getElementById("chat-box");
+    const typingDiv = document.createElement("div");
+    typingDiv.className = "typing-indicator";
+    typingDiv.id = "typing-indicator";
+    typingDiv.innerHTML = '<div class="dot"></div><div class="dot"></div><div class="dot"></div>';
+    chatBox.appendChild(typingDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function hideTypingIndicator() {
+    const typingDiv = document.getElementById("typing-indicator");
+    if (typingDiv) typingDiv.remove();
+}

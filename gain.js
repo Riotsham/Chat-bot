@@ -94,6 +94,13 @@ function sendMessage() {
     setTimeout(() => addMessage(botResponse, "bot-message"), 500);
 }
 
+document.getElementById("user-input").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") { 
+        event.preventDefault();   
+        sendMessage();            
+    }
+});
+
 
 function addMessage(message, className) {
     const chatBox = document.getElementById("chat-box");
@@ -297,3 +304,4 @@ function hideTypingIndicator() {
     const typingDiv = document.getElementById("typing-indicator");
     if (typingDiv) typingDiv.remove();
 }
+

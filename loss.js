@@ -100,6 +100,7 @@ document.getElementById("user-input").value = "";
 });
 
 
+
 addMessage(userInput, "user-message");
 
 
@@ -118,6 +119,13 @@ messageDiv.textContent = message;
 chatBox.appendChild(messageDiv);
 chatBox.scrollTop = chatBox.scrollHeight;
 }
+
+document.getElementById("user-input").addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+      event.preventDefault();   
+      sendMessage();           
+  }
+});
 
 function getBotResponse(input) {
 

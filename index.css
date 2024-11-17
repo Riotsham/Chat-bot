@@ -151,7 +151,7 @@ button{
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
   bottom: 10%;
-  left: 15%;
+  left: 35%;
  }
 
  .loss{
@@ -165,8 +165,8 @@ button{
   background-color: rgba(17, 25, 40, 0.75);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
-  bottom: 10%;
-  right: 15%;
+  bottom: -25%;
+  left: 35%;
 
  }
 
@@ -174,14 +174,15 @@ button{
   position: absolute;
   color: white;
   bottom: 05% ;
-  left: 22%;
+  left: 40%;
  }
 
  .l{
   position: absolute;
   color: white;
-  bottom: 05% ;
+  bottom: -30% ;
   right:  22%;
+  left: 40%;
  }
 
  .info{

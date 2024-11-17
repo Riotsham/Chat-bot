@@ -121,12 +121,14 @@ function getBotResponse(input) {
     } else if (input.includes("help")) {
         const lines = [
             "Here are some commands you can use:",
-            "1. \"Can you suggest a weight gain plan?\" - Get a tailored diet plan.",
+            "1. \"Can you suggest a weight gaining plan?\" - Get a tailored diet plan.",
             "2. \"List high protein foods.\" - Receive a list of protein-rich foods.",
             "3. \"List high carbohydrate foods.\" - Get a list of carbohydrate-rich foods.",
             "4. \"List high fat foods.\" - Access a list of fat-rich foods.",
             "5. \"Suggest a workout plan.\" - Receive a customized workout plan.",
-            "6. \"What today's plan.\" - Receive a workout plan for current."
+            "6. \"What today's plan.\" - Receive a workout plan for current.",
+            "7. Click top Calcutactor icon to get nutriton info of your food ",
+            "8.Click top scanner icon to get nutrition info of your food by scaning Barcode"
         ];
 
         lines.forEach((line, index) => {

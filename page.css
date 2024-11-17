@@ -94,7 +94,7 @@ input[type="text"] {
 
 button {
     position: absolute;
-    width: 5%;
+    width: 80px;
     padding: 10px;
     border: none;
     background-color: #0040ff;
@@ -190,7 +190,7 @@ button {
 
     button {
         position: absolute;
-        width: 10%;
+        width: 45px;
         padding: 10px;
         border: none;
         background-color: #0040ff;

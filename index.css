@@ -129,3 +129,88 @@ button{
 }
 
 
+@media(max-width:480px){
+
+.logo{
+ display: flex;
+ position: absolute;
+ left: 30%;
+ height: 200px;
+ width: 200px;
+}
+
+.gain{
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  font-size: 60px;
+  color: white;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  bottom: 10%;
+  left: 15%;
+ }
+
+ .loss{
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  font-size: 60px;
+  color: white;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  bottom: 10%;
+  right: 15%;
+
+ }
+
+ .g{
+  position: absolute;
+  color: white;
+  bottom: 05% ;
+  left: 22%;
+ }
+
+ .l{
+  position: absolute;
+  color: white;
+  bottom: 05% ;
+  right:  22%;
+ }
+
+ .info{
+  position:absolute;
+  right:17%;
+  top: 3%;
+  font-size: 20px;
+  height: 45px;
+  width: 45px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  
+ }
+
+ .bar-code{
+  position:absolute;
+  right:4%;
+  top: 3%;
+  font-size: 20px;
+  height: 45px;
+  width: 45px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  
+ }
+}

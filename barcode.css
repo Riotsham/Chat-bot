@@ -102,3 +102,31 @@ body {
             cursor: pointer;
             
         }
+
+        @media(max-width:480px){
+            .cam{
+                position: absolute;
+                bottom: 10%;
+                height: 40px;
+                background-color: #2c5a86;
+                color: white;
+                align-self: flex-end;
+                border: none;
+                border-radius: 10px;
+                right: 33%;
+                cursor: pointer;
+            }
+    
+            .cam-2{
+                position: absolute;
+                bottom: 10%;
+                height: 40px;
+                background-color: #2c5a86;
+                color: white;
+                align-self: flex-end;
+                border: none;
+                border-radius: 10px;
+                right: 10%;
+                cursor: pointer;
+            }
+        }

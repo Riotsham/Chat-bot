@@ -175,3 +175,68 @@ button {
         opacity: 0.2;
     }
 }
+
+@media (max-width: 480px){
+    input[type="text"] {
+        position: absolute;
+        width: 60%;
+        padding: 10px;
+        border: none;
+        height: 25px;
+        outline: none;
+        border-radius: 20px;
+        bottom: 05%;
+    }
+
+    button {
+        position: absolute;
+        width: 10%;
+        padding: 10px;
+        border: none;
+        background-color: #0040ff;
+        color: white;
+        cursor: pointer;
+        bottom: 05%;
+        right: 06%;
+        border-radius: 10px;
+    }
+
+    .info{
+        position:absolute;
+        right:17%;
+        top: 3%;
+        font-size: 20px;
+        height: 45px;
+        width: 45px;
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(17, 25, 40, 0.75);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.125);
+        
+       }
+
+       .bar-code{
+        position:absolute;
+        right:4%;
+        top: 3%;
+        font-size: 20px;
+        height: 45px;
+        width: 45px;
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(17, 25, 40, 0.75);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.125);
+        
+       }
+
+       img{
+        position: absolute;
+        height: 150px;
+        width: 150px;
+        top: -30px;
+        
+    }
+    
+}
